@@ -1,5 +1,5 @@
 /**
- * lodash 4.0.0 (Custom Build) <https://lodash.com/>
+ * lodash 4.0.1 (Custom Build) <https://lodash.com/>
  * Build: `lodash modularize exports="npm" -o ./`
  * Copyright 2012-2016 The Dojo Foundation <http://dojofoundation.org/>
  * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
@@ -22,7 +22,7 @@ function baseSortedUniqBy(array, iteratee) {
       value = array[0],
       computed = iteratee ? iteratee(value) : value,
       seen = computed,
-      resIndex = 0,
+      resIndex = 1,
       result = [value];
 
   while (++index < length) {
@@ -31,7 +31,7 @@ function baseSortedUniqBy(array, iteratee) {
 
     if (!eq(computed, seen)) {
       seen = computed;
-      result[++resIndex] = value;
+      result[resIndex++] = value;
     }
   }
   return result;
